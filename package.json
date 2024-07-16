@@ -1,0 +1,17 @@
+{
+  "name": "dummy-array-generator",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bora001/dummy-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
