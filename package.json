@@ -1,7 +1,7 @@
 {
   "name": "dummy-array-generator",
   "description": "Generates dummyArray based on the provided template and repetition settings 🌱 ",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -11,7 +11,12 @@
     "type": "git",
     "url": "https://github.com/bora001/dummy-generator.git"
   },
-  "keywords": [],
+  "homepage": "https://github.com/bora001/dummy-generator#readme",
+  "keywords": [
+    "dummy",
+    "array",
+    "generator"
+  ],
   "author": "",
   "license": "ISC"
 }
