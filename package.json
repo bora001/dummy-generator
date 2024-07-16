@@ -1,7 +1,7 @@
 {
   "name": "dummy-array-generator",
+  "description": "Generates dummyArray based on the provided template and repetition settings 🌱 ",
   "version": "0.0.2",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
