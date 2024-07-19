@@ -5,14 +5,25 @@
 
 ## Quick Usage
 
+1. string
+
 ```ts
-// 1) string
 genDummy({ template: "this test is {i}", time: 3 });
 
-// 2) object
+// returns [ 'this test is 1', 'this test is 2', 'this test is 3' ]
+```
+
+2. object
+
+```ts
 genDummy({
   template: `{name:'Lee', age:{i}, location:'Seoul'}`,
   time: 3,
   type: "object",
 });
+
+// returns
+// [ { name: 'Lee', age: 1, location: 'Seoul' },
+//  { name: 'Lee', age: 2, location: 'Seoul' },
+//  { name: 'Lee', age: 3, location: 'Seoul' } ]
 ```
