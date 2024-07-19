@@ -2,9 +2,20 @@
   "name": "dummy-array-generator",
   "description": "Generates dummyArray based on the provided template and repetition settings 🌱 ",
   "version": "0.0.4",
-  "main": "index.js",
+  "main": "./src/index.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/@types/index.d.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
   "scripts": {
-    "start": "node index.js",
+    "clean": "rm -rf dist",
+    "build": "pnpm i && pnpm run clean && tsc",
+    "prepack": "pnpm run build",
+    "start": "node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +28,10 @@
     "array",
     "generator"
   ],
-  "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  }
 }
