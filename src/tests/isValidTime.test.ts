@@ -1,4 +1,4 @@
-import { isValidTime } from "../utils/isValidTime";
+import { isValidTime } from "../utils/isValidTime.js";
 
 describe("isValidTime", () => {
   it("should return true for valid time", () => {

@@ -1,4 +1,4 @@
-import { convertToJSON } from "../utils/convertToJSON";
+import { convertToJSON } from "../utils/convertToJSON.js";
 
 describe("convertToJSON", () => {
   it("should convert a valid string to JSON", () => {

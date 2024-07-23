@@ -8,7 +8,7 @@
  *
  * Example usage:
  *
- * 1) string
+ * 1) string (Default)
  *   genDummy({ template: "this test is {i}", time: 3 })
  *
  * 2) object
@@ -17,17 +17,18 @@
  *     time: 3,
  *     type: "object",
  *   })
+ *
  */
 
-import { GenDummyTypes } from "./@types/index";
-import { convertToJSON } from "./utils/convertToJSON";
-import { isValidTime } from "./utils/isValidTime";
+import { GenDummyTypes, PreGenResultTypes } from "./@types/index.js";
+import { convertToJSON } from "./utils/convertToJSON.js";
+import { isValidTime } from "./utils/isValidTime.js";
 
 export const genDummy = ({ template, time, type }: GenDummyTypes) => {
   isValidTime(time);
 
   let isValidObject = true;
-  let result: (string | object)[] = [];
+  let result: PreGenResultTypes = [];
 
   for (let i = 0; i < time; i++) {
     let newTemplate;

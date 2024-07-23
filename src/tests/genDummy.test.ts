@@ -1,4 +1,4 @@
-import { genDummy } from "../index";
+import { genDummy } from "../index.js";
 
 describe("genDummy", () => {
   it("should generate dummy data for a given template", () => {
