@@ -22,9 +22,6 @@ const StringQuestion = {
   type: "input",
   name: "template",
   message: "Enter your template",
-  validate(value) {
-    return isValidString(value);
-  },
   when(answers) {
     // if type is object
     if (answers.type === "object") {
@@ -38,7 +35,7 @@ const objectQuestion = [
   {
     type: "input",
     name: "key",
-    message: "Enter your key of object",
+    message: "Enter the key of the object",
     validate(value) {
       return isValidString(value);
     },
@@ -53,7 +50,7 @@ const objectQuestion = [
   {
     type: "input",
     name: "value",
-    message: "Enter your value of object",
+    message: "Enter the value of the object",
     when(answers) {
       if (answers.type === "string") {
         return;
@@ -67,13 +64,13 @@ const questions = [
   {
     type: "confirm",
     name: "exported",
-    message: "Do you want to export dummy-array as file?",
+    message: "Do you want to export the dummy array as a file?",
     default: false,
   },
   {
     type: "list",
     name: "type",
-    message: "what is type of array?",
+    message: "what is the type of the array?",
     choices: ["string", "object"],
     when(answers) {
       return answers.exported;
@@ -85,7 +82,7 @@ const questions = [
   {
     type: "input",
     name: "name",
-    message: "what is name of array?",
+    message: "what is the name of the array?",
     when(answers) {
       return answers.exported;
     },
@@ -101,7 +98,7 @@ const questions = [
   {
     type: "input",
     name: "time",
-    message: "How many times you want to repeat?",
+    message: "How many times do you want to repeat?",
     validate(value) {
       const valid = !Number.isNaN(Number.parseFloat(value));
       return valid || "Please enter a number";
@@ -154,9 +151,11 @@ inquirer.prompt(questions).then((answers) => {
     value,
   } = answers;
 
-  const objTemplate = `{ ${[key]}: '${value}' }`;
   const result = genDummy({
-    template: type === "string" ? template : objTemplate,
+    template:
+      type === "string"
+        ? template.trim()
+        : `{ ${[key.trim()]}: '${value.trim()}' }`,
     time: +time,
     type,
     exported,
