@@ -1,9 +1,12 @@
 {
   "name": "dummy-array-generator",
   "description": "Generates dummyArray based on the provided template and repetition settings 🌱 ",
-  "version": "0.0.5",
+  "version": "0.0.13",
   "main": "dist/index.js",
   "type": "module",
+  "bin": {
+    "dummy-export": "./src/file-generator.js"
+  },
   "exports": {
     ".": {
       "types": "./src/@types/index.d.ts",
@@ -19,7 +22,8 @@
     "build": "pnpm i && pnpm run clean && pnpm build:tsc && pnpm build:js",
     "prepack": "pnpm run build",
     "start": "node src/index.ts",
-    "test": "jest"
+    "test": "jest",
+    "export": "node src/file-generator.js"
   },
   "repository": {
     "type": "git",
@@ -40,5 +44,8 @@
     "ts-jest": "^29.2.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "inquirer": "^10.1.0"
   }
 }
