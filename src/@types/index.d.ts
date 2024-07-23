@@ -3,3 +3,5 @@ export type GenDummyTypes = {
   time: number;
   type?: string;
 };
+
+export type PreGenResultTypes = (string | object)[];
