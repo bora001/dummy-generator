@@ -5,7 +5,7 @@
   "main": "./dist/index.js",
   "type": "module",
   "bin": {
-    "dummy-export": "./src/file-generator.js"
+    "dummy-export": "./src/utils/file-generator.js"
   },
   "exports": {
     ".": {
@@ -23,7 +23,7 @@
     "prepack": "pnpm run build",
     "start": "node src/index.ts",
     "test": "jest",
-    "dummy-export": "node src/file-generator.js"
+    "dummy-export": "node ./src/utils/file-generator.js"
   },
   "repository": {
     "type": "git",

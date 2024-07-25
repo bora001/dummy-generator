@@ -2,9 +2,9 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["DOM", "ES2021", "ES2021.String", "esnext.string"],
-    "typeRoots": ["src/@types", "./node_modules/@types"],
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
     "outDir": "./dist",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node",
     "esModuleInterop": true,
     "strict": true,
     "declaration": true,

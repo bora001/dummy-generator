@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { genDummy } from "../dist/index.js";
-import { saveFile } from "../dist/utils/saveFile.js";
+import { genDummy } from "../../dist/index.js";
+import { saveFile } from "../../dist/utils/saveFile.js";
 import inquirer from "inquirer";
 
 console.log("🟢 Welcome to dummy-array-generator 🌱");
