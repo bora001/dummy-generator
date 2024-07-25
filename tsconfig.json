@@ -2,13 +2,13 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["DOM", "ES2021", "ES2021.String", "esnext.string"],
-    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "typeRoots": ["src/@types", "./node_modules/@types"],
     "outDir": "./dist",
+    "moduleResolution": "Bundler",
     "esModuleInterop": true,
     "strict": true,
     "declaration": true,
-    "skipLibCheck": true,
-    "module": "ESNext"
+    "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "src/@types/**/*.d.ts"]
+  "include": ["src/**/*.ts", "src/@types/**/*.d.ts", "src/file-generator.js"]
 }
