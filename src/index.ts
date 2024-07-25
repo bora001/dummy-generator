@@ -20,9 +20,9 @@
  *
  */
 
-import { GenDummyTypes, PreGenResultTypes } from "./@types/index";
-import { convertToJSON } from "./utils/convertToJSON";
-import { isValidTime } from "./utils/isValidTime";
+import { GenDummyTypes, PreGenResultTypes } from "./@types/index.js";
+import { convertToJSON } from "./utils/convertToJSON.js";
+import { isValidTime } from "./utils/isValidTime.js";
 
 export const genDummy = ({ template, time, type }: GenDummyTypes) => {
   isValidTime(time);

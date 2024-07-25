@@ -1,12 +1,12 @@
 import fs from "fs";
 import path from "path";
+import { GenDummyTypes, PreGenResultTypes } from "../@types/index.js";
 
 export type GenDummyFileTypes = {
   fileName: string;
   fileType: string;
   name: string;
 };
-import { GenDummyTypes, PreGenResultTypes } from "../@types";
 type saveFileTypes = {
   type: GenDummyTypes["type"];
   result: PreGenResultTypes;

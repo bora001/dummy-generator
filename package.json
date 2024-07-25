@@ -3,9 +3,10 @@
   "description": "Generates dummyArray based on the provided template and repetition settings 🌱 ",
   "version": "0.0.10",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "bin": {
-    "dummy-export": "./src/utils/file-generator.js"
+    "dummy-export": "/src/utils/file-generator.js"
   },
   "exports": {
     ".": {
@@ -23,7 +24,7 @@
     "prepack": "pnpm run build",
     "start": "node src/index.ts",
     "test": "jest",
-    "dummy-export": "node ./src/utils/file-generator.js"
+    "dummy-export": "node src/utils/file-generator.js"
   },
   "repository": {
     "type": "git",

@@ -4,11 +4,11 @@
     "lib": ["DOM", "ES2021", "ES2021.String", "esnext.string"],
     "typeRoots": ["./src/@types", "./node_modules/@types"],
     "outDir": "./dist",
-    "moduleResolution": "Node",
     "esModuleInterop": true,
     "strict": true,
     "declaration": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "module": "ESNext"
   },
   "include": ["src/**/*.ts", "src/@types/**/*.d.ts"]
 }
