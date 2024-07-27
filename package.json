@@ -1,7 +1,7 @@
 {
   "name": "dummy-array-generator",
   "description": "Generates dummyArray based on the provided template and repetition settings 🌱 ",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "dist/index.js",
   "type": "module",
   "bin": {
