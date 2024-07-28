@@ -17,7 +17,9 @@ $ pnpm add dummy-array-generator
 ### 1) String
 
 ```ts
-genDummy({ template: "this test is {i}", time: 3 });
+import { genDummy } from "dummy-array-generator";
+
+const testDummy = genDummy({ template: "this test is {i}", time: 3 });
 
 // returns [ 'this test is 1', 'this test is 2', 'this test is 3' ]
 ```
@@ -26,7 +28,9 @@ genDummy({ template: "this test is {i}", time: 3 });
 ### 2) Object
 
 ```ts
-genDummy({
+import { genDummy } from "dummy-array-generator";
+
+const userDummy = genDummy({
   template: `{name:'Lee', age:{i}, location:'Seoul'}`,
   time: 3,
   type: "object",
@@ -56,18 +60,18 @@ $ pnpm dummy-export
 ### 1) String
 ```sh
 🟢 Welcome to dummy-array-generator 🌱
-? Do you want to export dummy-array as file? yes
-? what is type of array? string
-? what is name of array? fakeArticle
+? Do you want to export the dummy array as a file? yes
+? what is the type of the array? string
+? what is the name of the array? fakeArticle
 ? Enter your template article {i}
-? How many times you want to repeat? 3
-? define your file name article
+? How many times do you want to repeat? 7
+? define your file name fakeArticle
 ? choose type of your file .js
 ✅ The file has been successfully created.
 ```
 ```js
-// src/generated/article.js
-export const fakeArticle = ["article 1", "article 2", "article 3"];
+// src/generated/fakeArticle.js
+export const fakeArticle = [ "article 1", "article 2", "article 3", "article 4", "article 5", "article 6", "article 7"];
 ```
 
 
@@ -78,19 +82,19 @@ export const fakeArticle = ["article 1", "article 2", "article 3"];
 
 ```sh
 🟢 Welcome to dummy-array-generator 🌱
-? Do you want to export dummy-array as file? yes
-? what is type of array? object
-? what is name of array? fakeUser
-? Enter your key of object userId
-? Enter your value of object {i}
-? How many times you want to repeat? 4
+? Do you want to export the dummy array as a file? yes
+? what is the type of the array? object
+? what is the name of the array? fakeUser
+? Enter the key of the object userId
+? Enter the value of the object user {i}
+? How many times do you want to repeat? 13
 ? define your file name fakeUser
 ? choose type of your file .js
+✅ The file has been successfully created.
 ```
 
 ```js
 // src/generated/fakeUser.js
-export const fakeUser = [ { userId: "1" }, { userId: "2" }, { userId: "3" }, { userId: "4" }];
-
+export const fakeUser = [ { userId: "user 1" }, { userId: "user 2" }, ... { userId: "user 13" } ];
 ```
 
