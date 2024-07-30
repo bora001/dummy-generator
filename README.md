@@ -1,7 +1,8 @@
 
 # Dummy Array Generator
+Generate custom dummy arrays effortlessly with dummy-array-generator. This package is designed to help developers create repetitive dummy components efficiently, particularly when working with modern JavaScript frameworks like React and Next.js.
 
-- Generates dummyArray based on the provided template and repetition settings
+With dummy-array-generator, streamline your development workflow by generating the dummy data you need with ease.
 - ⚠️ Note: Currently a work in progress 🌱
 
 ## Installation
