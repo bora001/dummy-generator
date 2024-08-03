@@ -1,4 +1,4 @@
-export const convertToJSON = (str: string) => {
+export const convertToJSON = (str: string): object | undefined => {
   try {
     str = str.replace(/'/g, '"');
     str = str.replace(/([a-zA-Z0-9_]+)\s*:/gi, '"$1":');
