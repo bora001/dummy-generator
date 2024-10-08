@@ -79,12 +79,23 @@ const dummyWeatherInfo = genDummy({
 
 // returns
 // [
-//   'Shallow Pan of Food(1) is on the sale',
-//   'Kebab(2) is on the sale',
-//   'Fried Shrimp(3) is on the sale',
-//   'Doughnut(4) is on the sale',
-//   'Shallow Pan of Food(5) is on the sale'
-// ]
+//   {
+//     weather: "Sun",
+//     location: "South Korea",
+//   },
+//  {
+//     "weather": "Rainbow",
+//     "location": "Spain"
+//  },
+//   {
+//     weather: "Cloud with Lightning",
+//     location: "Morocco",
+//   },
+//   {
+//     weather: "Snowflake",
+//     location: "Canada",
+//   },
+// ];
 ```
 
 <hr/>
@@ -109,13 +120,13 @@ $ pnpm dummy-export
 
 ```sh
 🟢 Welcome to dummy-array-generator 🌱
-? Do you want to export the dummy array as a file? yes
-? what is the type of the array? string
-? what is the name of the array? fakeArticle
-? Enter your template article {i}
-? How many times do you want to repeat? 7
-? define your file name fakeArticle
-? choose type of your file .js
+? Export the dummy array as a file ? yes
+? Type of the array : string
+? Name of the array : fakeArticle
+? Enter your template article :{i}
+? Enter repeat count : 7
+? Define your file name : fakeArticle
+? Type of your file : .js
 ✅ The file has been successfully created.
 ```
 
@@ -133,14 +144,14 @@ export const fakeArticle = [
 
 ```sh
 🟢 Welcome to dummy-array-generator 🌱
-? Do you want to export the dummy array as a file? yes
-? what is the type of the array? object
-? what is the name of the array? fakeUser
-? Enter the key of the object userId
-? Enter the value of the object user {i}
-? How many times do you want to repeat? 13
-? define your file name fakeUser
-? choose type of your file .js
+? Export the dummy array as a file ? yes
+? Type of the array : object
+? Name of the array : fakeUser
+? Enter the key of the object : userId
+? Enter the value of the object : user {i}
+? Enter repeat count : 13
+? Define your file name : fakeUser
+? Type of your file : .js
 ✅ The file has been successfully created.
 ```
 
@@ -151,4 +162,19 @@ export const fakeUser = [
   { userId: "user 2" },
   ...{ userId: "user 13" },
 ];
+```
+
+## Custom File Path Configuration
+
+- By default, generated files are created in the `./src/generated directory`. However, you can customize the output directory by modifying the `dummy.config.json file`.
+- To set a custom output directory, specify the desired path in the outputDirectory field of your dummy.config.json file. Here’s an example configuration:
+
+```ts
+// dummy.config.json
+{
+  "file": {
+    "outputDirectory": "./src/generated"
+  }
+}
+
 ```
