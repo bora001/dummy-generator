@@ -31,13 +31,26 @@ const countSameNameFiles = (
 };
 
 const isFilePathExist = (fileName: string, fileType: string) => {
-  const output = `./src/generated/${fileName}${fileType}`;
   const __dirname = process.env.PWD || process.cwd();
-  const filePath = path.join(__dirname, output);
+  const configPath = path.join(__dirname, "dummy.config.json"); // user output directory
+  let config;
+  if (fs.existsSync(configPath)) {
+    config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
+  } else {
+    config = {
+      file: {
+        outputDirectory: "./src/generated", // Default output directory
+      },
+    };
+  }
+  const outputDir = config.file.outputDirectory;
+  const outputFilePath = `${outputDir}/${fileName}${fileType}`;
+  const filePath = path.join(__dirname, outputFilePath);
   const dirPath = path.dirname(filePath);
+
   if (fs.existsSync(filePath)) {
     const length = countSameNameFiles(dirPath, fileName, fileType);
-    const newPath = `./src/generated/${fileName}_${length}${fileType}`;
+    const newPath = `${outputDir}/${fileName}_${length}${fileType}`;
     return path.join(__dirname, newPath);
   } else {
     fs.mkdirSync(dirPath, { recursive: true });

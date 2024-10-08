@@ -21,7 +21,7 @@ const isValidString = (value) => {
 const StringQuestion = {
   type: "input",
   name: "template",
-  message: "Enter your template",
+  message: "Enter your template :",
   when(answers) {
     // if type is object
     if (answers.type === "object") {
@@ -35,7 +35,7 @@ const objectQuestion = [
   {
     type: "input",
     name: "key",
-    message: "Enter the key of the object",
+    message: "Enter the key of the object :",
     validate(value) {
       return isValidString(value);
     },
@@ -50,7 +50,7 @@ const objectQuestion = [
   {
     type: "input",
     name: "value",
-    message: "Enter the value of the object",
+    message: "Enter the value of the object :",
     when(answers) {
       if (answers.type === "string") {
         return;
@@ -64,13 +64,13 @@ const questions = [
   {
     type: "confirm",
     name: "exported",
-    message: "Do you want to export the dummy array as a file?",
+    message: "Export the dummy array as a file ?",
     default: false,
   },
   {
     type: "list",
     name: "type",
-    message: "what is the type of the array?",
+    message: "Type of the array :",
     choices: ["string", "object"],
     when(answers) {
       return answers.exported;
@@ -82,7 +82,7 @@ const questions = [
   {
     type: "input",
     name: "name",
-    message: "what is the name of the array?",
+    message: "Name of the array :",
     when(answers) {
       return answers.exported;
     },
@@ -98,7 +98,7 @@ const questions = [
   {
     type: "input",
     name: "time",
-    message: "How many times do you want to repeat?",
+    message: "Enter repeat count :",
     validate(value) {
       const valid = !Number.isNaN(Number.parseFloat(value));
       return valid || "Please enter a number";
@@ -111,7 +111,7 @@ const questions = [
   {
     type: "input",
     name: "fileName",
-    message: "define your file name",
+    message: "Define your file name :",
     validate(value) {
       return isValidString(value);
     },
@@ -122,7 +122,7 @@ const questions = [
   {
     type: "list",
     name: "fileType",
-    message: "choose type of your file",
+    message: "Type of your file :",
     choices: [".js"],
     when(answers) {
       return answers.exported;
